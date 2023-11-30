@@ -11,6 +11,7 @@ public class Usuario {
 	public Usuario(String nome, String email) {
 		this.nome = nome;
 		this.email = email;
+		this.lista_postagens = new ArrayList<String>();
 	}
 	
 	public String getNome() {
@@ -38,10 +39,12 @@ public class Usuario {
 	}
 	
 	public void novaPostagem(String postagem) {
-		
+		this.lista_postagens.add(postagem);
 	}
 	
 	public void listaPostagens() {
-		
+		for (int i = 0; i < this.lista_postagens.size(); i++) {
+			System.out.println("Postagem " + (i + 1) + ": " + this.lista_postagens.get(i));
+		}
 	}
 }
